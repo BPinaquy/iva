@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="com.example.bastien.calculateurexp.FeuillePerso"
+    android:id="@+id/relative">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Force"
+                android:id="@+id/textView9"
+                android:layout_column="0"
+                android:paddingBottom="5dp"
+                />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:height="20dp"
+                android:id="@+id/force"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:text="-"
+                android:id="@+id/mforce"
+                android:layout_column="2"
+                android:width="25dp"
+                android:height="15dp"
+                android:layout_height="35dp"
+                android:layout_width="35dp" />
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pforce"
+                android:layout_column="3"
+                android:width="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/forceexp"
+                android:layout_column="4"
+                android:width="75dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endurance"
+                android:id="@+id/textView10"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/endurance"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mendurance"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pendurance"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/enduranceexp"
+                android:layout_column="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dextérite"
+                android:id="@+id/textView11"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/dexterite"
+                android:layout_column="1"
+                android:text="1" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mdexterite"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pdexterite"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dexteriteexp"
+                android:layout_column="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clairvoyance   "
+                android:id="@+id/textView12"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/clairvoyance"
+                android:layout_column="1"
+                android:text="1" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mclairvoyance"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pclairvoyance"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clairvoyanceexp"
+                android:layout_column="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sagesse"
+                android:id="@+id/textView13"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/sagesse"
+                android:layout_column="1"
+                android:text="1" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/msagesse"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/psagesse"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sagesseexp"
+                android:layout_column="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CE"
+                android:id="@+id/textView14"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/ce"
+                android:layout_column="1"
+                android:text="1" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mce"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pce"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ceexp"
+                android:layout_column="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Education"
+                android:id="@+id/textView15"
+                android:layout_column="0"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/education"
+                android:layout_column="1"
+                android:text="1" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/meducation"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/peducation"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/educationexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Charisme"
+                android:id="@+id/textView16"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/charisme"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mcharisme"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pcharisme"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/charismeexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rapidite"
+                android:id="@+id/textView17"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/rapidite"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mrapidite"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/prapidite"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rapiditeexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chance"
+                android:id="@+id/textView18"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/chance"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mchance"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pchance"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chanceexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discrétion"
+                android:id="@+id/textView19"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/discretion"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mdiscretion"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pdiscretion"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discretionexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metier"
+                android:id="@+id/textView20"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/metier"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/mmetier"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/pmetier"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/metierexp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Supp"
+                android:id="@+id/textView21"
+                android:layout_column="0"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:id="@+id/supp"
+                android:layout_column="1"
+                android:text="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="-"
+                android:id="@+id/msupp"
+                android:layout_column="2"
+                android:width="25dp"/>
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="+"
+                android:id="@+id/psupp"
+                android:layout_column="3"
+                android:width="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/suppexp"
+                android:layout_column="4" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/supp2exp"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sauvegarder"
+                android:id="@+id/save"
+                android:layout_column="0"
+                android:width="50dp"
+                android:height="30dp"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalexp"
+                android:layout_column="4" />
+
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>
