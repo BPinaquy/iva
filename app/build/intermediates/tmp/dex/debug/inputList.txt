@@ -1,0 +1,5 @@
+C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\classes\debug
+C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-8713d987d3d65f43969cf001936e77a12f3d478f.jar
+C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-44979ab213dd64f9241b4c3fc5e4f7d15a3be39f.jar
+C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\classes-6aec5074708c32ec0729ffd1d15bba96ca3415f1.jar
+C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\classes-2f9bb1d5e4c68ba14c23df052d706ee77ece5b9d.jar
