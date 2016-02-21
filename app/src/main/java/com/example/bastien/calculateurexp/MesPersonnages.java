@@ -1,42 +1,33 @@
 package com.example.bastien.calculateurexp;
 
 import android.app.AlertDialog;
-import android.app.LauncherActivity;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
-
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MesPersonnages extends ActionBarActivity {
+public class  MesPersonnages extends ActionBarActivity {
     private FloatingActionButton fab;
     private DatabaseHandler db;
     private ListView list;
     private ArrayList<String> listNom;
     private String nomSelectionne;
+    private int itemClicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,39 +75,9 @@ public class MesPersonnages extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MesPersonnages.this, FeuillePerso.class);
-                intent.putExtra("nom", listNom.get(position));
-                startActivity(intent);
-                Log.d("test", listNom.get(position));
+                itemClicked=position;
             }
         });
-
-        /*list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                AlertDialog.Builder ad = new AlertDialog.Builder(MesPersonnages.this);
-                ad.setTitle("Suppression");
-                TextView t = new TextView(MesPersonnages.this);
-                t.setText("Voulez vous supprimer ce personnage ?");
-                ad.setView(t);
-                ad.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        db.supprimer(listNom.get(position));
-                        remplirList();
-                        return;
-                    }
-                });
-                ad.setNegativeButton("Non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                });
-                ad.show();
-                return true;
-            }
-        });*/
 
         ScrollView sc =(ScrollView)findViewById(R.id.scrollView);
         sc.setOnTouchListener(new OnSwipeListener() {
@@ -127,14 +88,26 @@ public class MesPersonnages extends ActionBarActivity {
 
             }
         });
-       /* list.setOnTouchListener(new OnSwipeListener() {
+        list.setOnTouchListener(new OnSwipeListener() {
             @Override
             public void onSwipeLeft() {
                 Intent intent = new Intent(MesPersonnages.this, CalculDegat.class);
                 startActivity(intent);
 
             }
-        });*/
+
+            public void onTouch(MotionEvent e) {
+                Intent intent = new Intent(MesPersonnages.this, FeuillePerso.class);
+                intent.putExtra("nom", listNom.get(itemClicked));
+                startActivity(intent);
+                Log.d("test", listNom.get(itemClicked));
+                itemClicked=-1;
+            }
+
+            public void onLong(MotionEvent e){
+                openContextMenu(list);
+            }
+        });
         registerForContextMenu(list);
     }
 
@@ -165,12 +138,13 @@ public class MesPersonnages extends ActionBarActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         Log.d("test", "dans menu context");
         ListView lv = (ListView) v;
-        AdapterView.AdapterContextMenuInfo acmi = (AdapterView.AdapterContextMenuInfo) menuInfo;
-        nomSelectionne = (String)listNom.get(acmi.position);
+        nomSelectionne = (String)listNom.get(itemClicked);
+        itemClicked=-1;
         Log.d("test", nomSelectionne);
         menu.setHeaderTitle("Context Menu");
         menu.add(0, v.getId(), 0, "Afficher");
         menu.add(0, v.getId(), 0, "Supprimer");
+        menu.add(0,v.getId(), 0, "Attaquer");
     }
 
     @Override
@@ -180,8 +154,17 @@ public class MesPersonnages extends ActionBarActivity {
         super.onContextItemSelected(item);
 
 
-        if(item.getTitle() =="Afficher"){
+        if(item.getTitle()=="Afficher"){
             Intent intent = new Intent(MesPersonnages.this, FeuillePerso.class);
+            intent.putExtra("nom", nomSelectionne);
+            startActivity(intent);
+        }
+        if(item.getTitle()=="Supprimer"){
+            db.supprimer(nomSelectionne);
+            remplirList();
+        }
+        if(item.getTitle()=="Attaquer"){
+            Intent intent = new Intent(MesPersonnages.this, CalculDegatPersonnage.class);
             intent.putExtra("nom", nomSelectionne);
             startActivity(intent);
         }
@@ -189,5 +172,7 @@ public class MesPersonnages extends ActionBarActivity {
         return true;
 
     }
+
+
 
 }

@@ -10,7 +10,6 @@
         <activity
             android:name=".CalculExp"
             android:label="@string/app_name" >
-
         </activity>
         <activity
             android:name=".CalculDegat"
@@ -18,18 +17,21 @@
         </activity>
         <activity
             android:name=".MesPersonnages"
-            android:label="@string/title_activity_mes_personnages">
+            android:label="@string/title_activity_mes_personnages" >
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".FeuillePerso"
             android:label="@string/title_activity_creation_personnage"
             android:theme="@style/AppTheme.NoActionBar" >
-
+        </activity>
+        <activity
+            android:name=".CalculDegatPersonnage"
+            android:label="@string/title_activity_calcul_degat_personnage" >
         </activity>
     </application>
 

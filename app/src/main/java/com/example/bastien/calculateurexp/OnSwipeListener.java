@@ -30,8 +30,10 @@ public class OnSwipeListener implements View.OnTouchListener {
             onTouch(e);
             return true;
         }
-
-
+        @Override
+        public void onLongPress(MotionEvent e){
+            onLong(e);
+        }
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             boolean result = false;
@@ -56,6 +58,10 @@ public class OnSwipeListener implements View.OnTouchListener {
         }
     }
     public void onTouch(MotionEvent e) {
+    }
+
+    public void onLong(MotionEvent e){
+
     }
     public void onSwipeRight() {
 

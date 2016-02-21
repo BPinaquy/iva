@@ -7,9 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,9 +28,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public static final String METIER_TABLE_NOTIF_CREATE =
             "CREATE TABLE " + TABLE_NAME_NOTIF + " (" +
-                    KEY + " TEXT PRIMARY KEY, force INTEGER, endurance INTEGER, dexterite INTEGER, clairvoyance INTEGER, sagesse INTEGER, ce INTEGER, education INTEGER, charisme INTEGER, rapidite INTEGER, chance INTEGER, discretion INTEGER, mascarade INTEGER, metier INTEGER, supp1 INTEGER);";
+                    KEY + " TEXT PRIMARY KEY, niveau INTEGER, force INTEGER, endurance INTEGER, dexterite INTEGER, clairvoyance INTEGER, sagesse INTEGER, ce INTEGER, education INTEGER, charisme INTEGER, rapidite INTEGER, chance INTEGER, discretion INTEGER, mascarade INTEGER, metier INTEGER, supp1 INTEGER);";
     public static final String TABLE_DROP_NOTIF = "DROP TABLE IF EXISTS " + TABLE_NAME_NOTIF + ";";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "IVA";
 
     @Override
@@ -54,6 +52,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues value = new ContentValues();
         value.put(KEY, personnage.getNom());
+        value.put("niveau", personnage.getNiveau());
         value.put("force", personnage.getForce());
         value.put("endurance", personnage.getEndurance());
         value.put("dexterite", personnage.getDexterite());
@@ -95,16 +94,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return trouve;
     }
 
+    public int get(String nom, String carac){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_NAME_NOTIF, new String[]{KEY, carac
+                }, KEY + "=?",
+                new String[]{nom}, null, null, null, null);
+        int caract =0;
+        if (!cursor.isAfterLast()) {// Si le cursor n'est pas null
+            cursor.moveToFirst();
+            caract = cursor.getInt(0);
+        }
+        cursor.close();
+
+        return caract;
+    }
+
     public Personnage get(String nom){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NAME_NOTIF, new String[]{KEY, "force", "endurance", "dexterite", "clairvoyance", "sagesse", "ce", "education", "charisme", "rapidite", "chance", "discretion", "metier", "supp1"
+        Cursor cursor = db.query(TABLE_NAME_NOTIF, new String[]{KEY,"niveau", "force", "endurance", "dexterite", "clairvoyance", "sagesse", "ce", "education", "charisme", "rapidite", "chance", "discretion", "metier", "supp1"
                 }, KEY + "=?",
                 new String[]{nom}, null, null, null, null);
         Personnage p = null;
+        Log.d("test", nom);
         if (!cursor.isAfterLast()) {// Si le cursor n'est pas null
             cursor.moveToFirst();
-            p = new Personnage(cursor.getString(0),Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Integer.parseInt(cursor.getString(8)), Integer.parseInt(cursor.getString(9)), Integer.parseInt(cursor.getString(10)), Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)));
-
+            Log.d("test", "non null");
+            p = new Personnage(cursor.getString(0),Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Integer.parseInt(cursor.getString(8)), Integer.parseInt(cursor.getString(9)), Integer.parseInt(cursor.getString(10)), Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)), Integer.parseInt(cursor.getString(14)));
+            Log.d("test",p!=null?"nonnul":"null" );
         }
         cursor.close();
 
@@ -113,7 +129,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<Personnage> getAll(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NAME_NOTIF, new String[]{KEY, "force", "endurance", "dexterite", "clairvoyance", "sagesse", "ce", "education", "charisme", "rapidite", "chance", "discretion", "metier", "supp1"
+        Cursor cursor = db.query(TABLE_NAME_NOTIF, new String[]{KEY, "niveau", "force", "endurance", "dexterite", "clairvoyance", "sagesse", "ce", "education", "charisme", "rapidite", "chance", "discretion", "metier", "supp1"
                 }, null,
                 new String[]{}, null, null, null, null);
         Personnage p = null;
@@ -121,7 +137,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (!cursor.isAfterLast()) {// Si le cursor n'est pas null
             cursor.moveToFirst();
             do{
-            p = new Personnage(cursor.getString(0),Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Integer.parseInt(cursor.getString(8)), Integer.parseInt(cursor.getString(9)), Integer.parseInt(cursor.getString(10)), Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)));
+            p = new Personnage(cursor.getString(0),Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Integer.parseInt(cursor.getString(8)), Integer.parseInt(cursor.getString(9)), Integer.parseInt(cursor.getString(10)), Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)), Integer.parseInt(cursor.getString(14)));
             personnages.add(p);} while (cursor.moveToNext());
         }
         cursor.close();

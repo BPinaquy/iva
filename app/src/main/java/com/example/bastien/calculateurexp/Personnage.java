@@ -4,10 +4,12 @@ package com.example.bastien.calculateurexp;
  * Created by bastien on 16/02/16.
  */
 public class Personnage {
-    private int force, endurance, rapidite, dexterite, charisme, education, sagesse, ce, chance, clairvoyance, discretion, metier, caracsupp;
+    private int niveau, force, endurance, rapidite, dexterite, charisme, education, sagesse, ce, chance, clairvoyance, discretion, metier, caracsupp;
     private String nom;
 
-    public Personnage(String nom, int force, int endurance, int dexterite, int clairvoyance, int sagesse, int ce, int education, int charisme, int rapidite, int chance,  int discretion, int metier, int caracsupp) {
+
+    public Personnage(String nom, int niveau, int force, int endurance, int dexterite, int clairvoyance, int sagesse, int ce, int education, int charisme, int rapidite, int chance,  int discretion, int metier, int caracsupp) {
+        this.niveau = niveau;
         this.force = force;
         this.endurance = endurance;
         this.rapidite = rapidite;
@@ -23,6 +25,10 @@ public class Personnage {
         this.caracsupp = caracsupp;
         this.nom=nom;
     }
+
+    public int getNiveau() {return niveau;}
+
+    public void setNiveau(int niveau) {this.niveau = niveau;}
 
     public String getNom() {return nom;}
 

@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:fitsSystemWindows="true"
     tools:context="com.example.bastien.calculateurexp.FeuillePerso"
-    android:id="@+id/relative">
+    >
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView" >
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/relative">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/view">
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Niveau"
+                android:id="@+id/textniveau"
+                android:layout_column="0"
+                android:paddingBottom="5dp"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/niveau"
+                android:layout_column="1"
+                android:inputType="number"/>
+
+
+        </TableRow>
+
+
 
         <TableRow
             android:layout_width="match_parent"
@@ -633,7 +669,7 @@
 
         </TableRow>
     </TableLayout>
-
-
 </RelativeLayout>
-<!-- From: file:/home/bastien/AndroidStudioProjects/CalculateurExp/app/src/main/res/layout/activity_feuille_perso.xml -->
+</ScrollView>
+</RelativeLayout>
+<!-- From: file:/C:/Users/Bastien/Desktop/CalculateurExp/app/src/main/res/layout/activity_feuille_perso.xml -->

@@ -35,6 +35,10 @@
             android:label="@string/title_activity_creation_personnage"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name="com.example.bastien.calculateurexp.CalculDegatPersonnage"
+            android:label="@string/title_activity_calcul_degat_personnage" >
+        </activity>
     </application>
 
 </manifest>

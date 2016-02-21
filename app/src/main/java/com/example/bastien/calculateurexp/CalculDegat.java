@@ -3,14 +3,13 @@ package com.example.bastien.calculateurexp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 
@@ -18,6 +17,7 @@ public class CalculDegat extends ActionBarActivity {
     private EditText chance, attaque, bonus, de, carac, technique;
     private Button calcul;
     private TextView degat;
+    public ScrollView sc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,21 @@ public class CalculDegat extends ActionBarActivity {
         setContentView(R.layout.activity_calcul_degat);
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setOnTouchListener(new com.example.bastien.calculateurexp.OnSwipeListener() {
+            @Override
+            public void onSwipeLeft() {
+                Intent intent = new Intent(CalculDegat.this, CalculExp.class);
+                startActivity(intent);
+
+            }
+            @Override
+            public void onSwipeRight() {
+                Intent intent = new Intent(CalculDegat.this, MesPersonnages.class);
+                startActivity(intent);
+
+            }
+        });
+        sc=(ScrollView)findViewById(R.id.scrollView);
+        sc.setOnTouchListener(new com.example.bastien.calculateurexp.OnSwipeListener() {
             @Override
             public void onSwipeLeft() {
                 Intent intent = new Intent(CalculDegat.this, CalculExp.class);

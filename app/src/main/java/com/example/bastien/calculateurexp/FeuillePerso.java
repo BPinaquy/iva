@@ -6,9 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.EditText;
 import android.widget.TextView;
-import com.example.bastien.calculateurexp.CalculExp;
 
 public class FeuillePerso extends ActionBarActivity {
     TextView force, endurance, dexterite, clairvoyance, sagesse, ce, education, charisme, rapidite, chance, discretion, metier, supp;
@@ -16,11 +15,13 @@ public class FeuillePerso extends ActionBarActivity {
     Button mforce, mendurance, mdexterite, mclairvoyance, msagesse, mce, meducation, mcharisme, mrapidite, mchance, mdiscretion, mmetier, msupp, save;
     Button pforce, pendurance, pdexterite, pclairvoyance, psagesse, pce, peducation, pcharisme, prapidite, pchance, pdiscretion, pmetier, psupp;
     DatabaseHandler db;
+    EditText niveau;
     String nom="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feuille_perso);
+        niveau=(EditText)findViewById(R.id.niveau);
         force=(TextView)findViewById(R.id.force);
         endurance=(TextView)findViewById(R.id.endurance);
         dexterite=(TextView)findViewById(R.id.dexterite);
@@ -98,7 +99,7 @@ public class FeuillePerso extends ActionBarActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Personnage p = new Personnage(nom, Integer.parseInt((String)force.getText()),Integer.parseInt((String)endurance.getText()),Integer.parseInt((String)dexterite.getText()),Integer.parseInt((String)clairvoyance.getText()),Integer.parseInt((String)sagesse.getText()),Integer.parseInt((String)ce.getText()),Integer.parseInt((String)education.getText()),Integer.parseInt((String)charisme.getText()),Integer.parseInt((String)rapidite.getText()),Integer.parseInt((String)chance.getText()),Integer.parseInt((String)discretion.getText()),Integer.parseInt((String)metier.getText()),Integer.parseInt((String)supp.getText()));
+                Personnage p = new Personnage(nom, Integer.parseInt(niveau.getText().toString()), Integer.parseInt((String)force.getText()),Integer.parseInt((String)endurance.getText()),Integer.parseInt((String)dexterite.getText()),Integer.parseInt((String)clairvoyance.getText()),Integer.parseInt((String)sagesse.getText()),Integer.parseInt((String)ce.getText()),Integer.parseInt((String)education.getText()),Integer.parseInt((String)charisme.getText()),Integer.parseInt((String)rapidite.getText()),Integer.parseInt((String)chance.getText()),Integer.parseInt((String)discretion.getText()),Integer.parseInt((String)metier.getText()),Integer.parseInt((String)supp.getText()));
                 Log.d("test", String.valueOf(p.getForce()+" "+p.getEndurance()+" "+p.getDexterite()) );
                 db.ajouter(p);
             }
@@ -150,6 +151,7 @@ public class FeuillePerso extends ActionBarActivity {
     public void chargerDonnees(){
         Log.d("test", "dans charger donnees");
         Personnage p = db.get(nom);
+        niveau.setText(String.valueOf(p.getNiveau()));
         force.setText(String.valueOf(p.getForce()));
         endurance.setText(String.valueOf(p.getEndurance()));
         dexterite.setText(String.valueOf(p.getDexterite()));
