@@ -24,11 +24,6 @@
         <activity
             android:name="com.example.bastien.calculateurexp.MesPersonnages"
             android:label="@string/title_activity_mes_personnages" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.example.bastien.calculateurexp.FeuillePerso"
@@ -37,7 +32,17 @@
         </activity>
         <activity
             android:name="com.example.bastien.calculateurexp.CalculDegatPersonnage"
-            android:label="@string/title_activity_calcul_degat_personnage" >
+            android:label="" >
+        </activity>
+        <activity
+            android:name="com.example.bastien.calculateurexp.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

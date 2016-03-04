@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Bastien\Desktop\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jar="/home/bastien/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-4bdfef0e33e8231c3b79e559702ddf9c4832aaf8.jar" />
+        <dex dex="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-cc417f87e927312b9a1d4cf34bf1765ec654a9ba.jar" />
     </item>
     <item
-        jar="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\classes-78999a4df9081b3c4f78da33e345bdc6f5246b44.jar" />
-    </item>
-    <item
-        jar="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\classes-08852fd9bce8d0a9dc5daefe8813479784d6b530.jar" />
-    </item>
-    <item
-        jar="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jar="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\classes-6bae96dc0f0a2b4e54a3629e1af56539c9ebcca0.jar" />
+        <dex dex="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/pre-dexed/debug/classes-a41b4560ce566244aa6eef3b30122f501216d458.jar" />
     </item>
     <item
-        jar="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jar="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/pre-dexed/debug/classes-3530c833ab59852298f782229fa88fedc724f07e.jar" />
+    </item>
+    <item
+        jar="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\Bastien\Desktop\CalculateurExp\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-e40d75a0837fbd2965f8ee01d8724d8e02ae6901.jar" />
+        <dex dex="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-4e15d6629792b554c3b16858f34f3805021cc657.jar" />
+    </item>
+    <item
+        jar="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/home/bastien/AndroidStudioProjects/iva/app/build/intermediates/pre-dexed/debug/classes-7951a047052fa13b3f92bbe4dd9acef68f6cba7d.jar" />
     </item>
 
 </items>

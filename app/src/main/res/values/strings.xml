@@ -7,6 +7,7 @@
     <string name="title_activity_calcul_degat">CalculDegat</string>
     <string name="title_activity_mes_personnages">MesPersonnages</string>
     <string name="title_activity_creation_personnage">CreationPersonnage</string>
-    <string name="title_activity_calcul_degat_personnage">CalculDegatPersonnage</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>
